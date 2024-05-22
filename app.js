@@ -15,11 +15,11 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', { message: "This is Index Page !!!!!!!!" })
 })
 
-app.get('/abc', (req, res) => {
-    res.render('about')
+app.get('/about', (req, res) => {
+    res.render('about',{text:'This is about page !!!!!!!!!!!'})
 })
 
 
