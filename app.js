@@ -1,5 +1,6 @@
 // Imports
 const express = require('express')
+const expressLayouts = require('express-ejs-layouts')
 const app = express()
 const port = 3000
 
@@ -12,14 +13,16 @@ app.use('/img', express.static(__dirname + 'public/img'))
 
 // Set Views
 app.set('views', './views')
+app.use(expressLayouts)
 app.set('view engine', 'ejs')
 
+
 app.get('/', (req, res) => {
-    res.render('index', { message: "This is Index Page !!!!!!!!" })
+    res.render('index')
 })
 
 app.get('/about', (req, res) => {
-    res.render('about',{text:'This is about page !!!!!!!!!!!'})
+    res.render('about')
 })
 
 
